@@ -5,14 +5,14 @@
 #property version "1.00"#include <Trade/Trade.mqh>
 
 input double   LotSize              = 0.01;
-input int      SL_Distance_Points   = 100000;
-input double   RiskRewardRatio      = 1.33;
-input color    PinkLineColor        = clrPink;
+input int      SL_Distance_Points   = 1789;
+input double   RiskRewardRatio      = 1.23;
+input color    PointLineColor       = clrWhite;
 input int      SlippagePoints       = 20;
 input ulong    MagicNumber          = 575899;
 
 CTrade trade;
-string prefix = "PLTM_";
+string prefix = "LTM_";
 string labels[9] = {
    "BUY NOW",
    "SELL NOW",
@@ -117,7 +117,7 @@ bool GetPinkPrice(double & price) {
    for (int i = 0; i < count; i++) {
       string name = ObjectName(0, i, 0, -1);
       if (ObjectGetInteger(0, name, OBJPROP_TYPE) != OBJ_HLINE) continue;
-      if ((color) ObjectGetInteger(0, name, OBJPROP_COLOR) != PinkLineColor) continue;
+      if ((color) ObjectGetInteger(0, name, OBJPROP_COLOR) != PointLineColor) continue;
       price = NormalizeDouble(ObjectGetDouble(0, name, OBJPROP_PRICE), _Digits);
       return true;
    }
@@ -241,7 +241,7 @@ void DeletePinkLines() {
    for (int i = ObjectsTotal(0, 0, -1) - 1; i >= 0; i--) {
       string name = ObjectName(0, i, 0, -1);
       if (ObjectGetInteger(0, name, OBJPROP_TYPE) != OBJ_HLINE) continue;
-      if ((color) ObjectGetInteger(0, name, OBJPROP_COLOR) != PinkLineColor) continue;
+      if ((color) ObjectGetInteger(0, name, OBJPROP_COLOR) != PointLineColor) continue;
       if (ObjectDelete(0, name)) deleted++;
       else {
          failed++;
