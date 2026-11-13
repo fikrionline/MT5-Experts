@@ -7,8 +7,8 @@
 
 input double   LotSize              = 0.01;
 input double   RiskRewardRatio      = 1.23;
-input color    OrderLineColor       = clrWhite;
-input color    StopLossLineColor    = clrPlum;
+input color    OrderLineColor       = clrBlue;
+input color    StopLossLineColor    = clrRed;
 input int      SlippagePoints       = 20;
 input ulong    MagicNumber          = 575899;
 
@@ -21,8 +21,8 @@ string labels[9] = {
    "SELL LIMIT",
    "BUY STOP",
    "SELL STOP",
-   "DEL PENDING ORDER",
-   "CLOSE ALL ORDER",
+   "DEL PENDING",
+   "CLOSE ALL",
    "DEL LINE"
 };
 string ids[9] = {
@@ -47,10 +47,10 @@ int OnInit() {
       string name = prefix + ids[i];
       if (!ObjectCreate(0, name, OBJ_BUTTON, 0, 0, 0)) return INIT_FAILED;
       ObjectSetInteger(0, name, OBJPROP_CORNER, CORNER_LEFT_UPPER);
-      ObjectSetInteger(0, name, OBJPROP_XDISTANCE, 12 + (i % 2) * 155);
+      ObjectSetInteger(0, name, OBJPROP_XDISTANCE, 12 + (i % 2) * 133);
       ObjectSetInteger(0, name, OBJPROP_YDISTANCE, 30 + (i / 2) * 39);
-      ObjectSetInteger(0, name, OBJPROP_XSIZE, 148);
-      ObjectSetInteger(0, name, OBJPROP_YSIZE, 32);
+      ObjectSetInteger(0, name, OBJPROP_XSIZE, 123);
+      ObjectSetInteger(0, name, OBJPROP_YSIZE, 29);
       ObjectSetString(0, name, OBJPROP_TEXT, labels[i]);
       ObjectSetInteger(0, name, OBJPROP_FONTSIZE, 9);
       ObjectSetInteger(0, name, OBJPROP_COLOR, clrWhite);

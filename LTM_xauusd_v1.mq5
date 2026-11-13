@@ -7,7 +7,7 @@
 input double   LotSize              = 0.01;
 input int      SL_Distance_Points   = 1789;
 input double   RiskRewardRatio      = 1.23;
-input color    PointLineColor       = clrWhite;
+input color    PointLineColor       = clrBlue;
 input int      SlippagePoints       = 20;
 input ulong    MagicNumber          = 575899;
 

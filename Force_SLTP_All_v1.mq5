@@ -9,8 +9,8 @@ CTrade trade;
 
 //--- Inputs
 //input bool   UseAllSymbols = true;   // true = all symbols, false = current symbol
-input double StopLossPrice = 4019.58; // Fixed SL price
-input double TakeProfitPrice = 3987.58; // Fixed TP price
+input double StopLossPrice = 28320.00; // Fixed SL price
+input double TakeProfitPrice = 28480.00; // Fixed TP price
 enum TheAreYouSure {
    Yes,
    No
