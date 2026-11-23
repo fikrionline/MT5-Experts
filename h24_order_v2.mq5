@@ -25,8 +25,8 @@ input int   TargetDay         = 0;         // 0 = Today | 1 = Yesterday | 2 = Da
 input bool  BuySellButton     = false;
 input bool  ShowAlert         = false;     // Turn on Alert
 input int   AlertDelaySeconds = 9;         // Alert Delay in Second
-input color ColorHighest      = clrMaroon;
-input color ColorLowest       = clrDarkGreen;
+input color ColorHighest      = clrMagenta;
+input color ColorLowest       = clrMagenta;
 input int   Vline             = 0;         // Create Vertlical Line
 
 //--- Button settings
@@ -231,11 +231,11 @@ void UpdateInformation() {
    ObjectCreate(0, CornerName, OBJ_LABEL, 0, 0, 0);
    ObjectSetString(0, CornerName, OBJPROP_TEXT, CornerText);
    ObjectSetString(0, CornerName, OBJPROP_FONT, "Arial");
-   ObjectSetInteger(0, CornerName, OBJPROP_FONTSIZE, 19);
+   ObjectSetInteger(0, CornerName, OBJPROP_FONTSIZE, 11);
    ObjectSetInteger(0, CornerName, OBJPROP_COLOR, clrAqua);
    ObjectSetInteger(0, CornerName, OBJPROP_CORNER, CORNER_RIGHT_UPPER);
-   ObjectSetInteger(0, CornerName, OBJPROP_XDISTANCE, 333);
-   ObjectSetInteger(0, CornerName, OBJPROP_YDISTANCE, 57);
+   ObjectSetInteger(0, CornerName, OBJPROP_XDISTANCE, 222);
+   ObjectSetInteger(0, CornerName, OBJPROP_YDISTANCE, 33);
    string Warning = "";
    if (iHigh(_Symbol, markTF, 0) == Highest) {
       Warning = GetPeriodString(markTF) + " HIGH BREAKOUT";
@@ -266,11 +266,11 @@ void UpdateInformation() {
       if (LastAlertTime == 0 || (CurrentTime - LastAlertTime) >= AlertDelaySeconds) {
          double currentBid = last_tick.bid;
          if (currentBid > HighestOpen && currentBid < Highest) {
-            Alert("Alhamdulillah, " + _Symbol + " " + GetPeriodString(markTF));
+            Alert("SELL " + _Symbol + " " + GetPeriodString(markTF));
          }
          double currentAsk = last_tick.ask;
          if (currentAsk < LowestOpen && currentAsk > Lowest) {
-            Alert("Alhamdulillah, " + _Symbol + " " + GetPeriodString(markTF));
+            Alert("BUY " + _Symbol + " " + GetPeriodString(markTF));
          }
          LastAlertTime = CurrentTime;
       }
