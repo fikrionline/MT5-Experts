@@ -22,8 +22,8 @@ input ENUM_TIMEFRAMES markTF  = PERIOD_H1; // Time Frame Target
 input int   theNumOfBars      = 0;         // NumberOfBars
 input string TargetDateTime   = "";        // Spesific DateTime ==> 2026.10.05 05:57:58
 input int   TargetDay         = 0;         // 0 = Today | 1 = Yesterday | 2 = Day Before Yesterday
-input bool  BuySellButton     = false;
-input bool  ShowAlert         = false;     // Turn on Alert
+input bool  BuySellButton     = true;
+input bool  ShowAlert         = true;     // Turn on Alert
 input int   AlertDelaySeconds = 9;         // Alert Delay in Second
 input color ColorHighest      = clrMagenta;
 input color ColorLowest       = clrMagenta;
