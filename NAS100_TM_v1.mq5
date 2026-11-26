@@ -20,8 +20,8 @@ int BaseStep = 100;
 int BarsBack = 500;
 int BarsForward = 50;
 
-input double ReminderA = 15;
-input double ReminderB = 85;
+input double ReminderA = 67;
+input double ReminderB = 55;
 
 input color colorReminderA = clrDarkGreen;
 input color colorReminderB = clrMaroon;
